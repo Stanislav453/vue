@@ -1,24 +1,30 @@
 let bigText       = document.querySelector("#big-text"),
     litleText     = document.querySelector("#litle-text"),
     preview       = document.querySelector(".preview"),
-    previewSmall  = document.querySelector(".preview2");
-
-    console.log( previewSmall )
+    previewSmall  = document.querySelector(".preview2"),
+    catchUl       = document.querySelector("ul")
 
 
 bigText.addEventListener("input", function(e) {
-    e.preventDefault();
 
-    preview.textContent =  e.target.value 
+ let myBigText =  preview.textContent =  e.target.value; 
+    console.log( e )
+
+    if( e.data === 'e' ) {
+    let createLi = document.createAttribute("li");
+    }
 
 });
 
 litleText.addEventListener("input", function(e) {
-    e.preventDefault();
 
-    // previewSmall.textContent =  e.target.value 
-    previewSmall.innerText = e.target.value 
+
+    previewSmall.innerText = e.target.value; 
 
 });
+
+// document.body.addEventListener("keyup", function(e) {
+//     console.log(e)
+// })
 
 
