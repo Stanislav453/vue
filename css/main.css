@@ -138,7 +138,7 @@ li:nth-child(5n+5) article { background: #0f1a5f; }
   width: 100%;
 }
 
-.preview {
+.preview, .preview2 {
   font-size: 13px;
   opacity: .5;
 }
