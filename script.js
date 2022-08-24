@@ -1,30 +1,33 @@
-let bigText       = document.querySelector("#big-text"),
-    litleText     = document.querySelector("#litle-text"),
-    preview       = document.querySelector(".preview"),
-    previewSmall  = document.querySelector(".preview2"),
-    catchUl       = document.querySelector("ul")
+let bigText = document.querySelector("#big-text"),
+  litleText = document.querySelector("#litle-text"),
+  preview = document.querySelector(".preview"),
+  previewSmall = document.querySelector(".preview2"),
+  appBoddy = document.querySelector("#app");
 
-
-bigText.addEventListener("input", function(e) {
-
- let myBigText =  preview.textContent =  e.target.value; 
-    console.log( e )
-
-    if( e.data === 'e' ) {
-    let createLi = document.createAttribute("li");
-    }
-
+appBoddy.addEventListener("keydown", function (e) {
+  console.log(e);
+  if ((e.data = "Enter")) {
+    console.log("Ahoj");
+  }
 });
 
-litleText.addEventListener("input", function(e) {
+// bigText.addEventListener("keyup", function (e) {
 
+//   var myBigText = (preview.textContent = e.target.value);
 
-    previewSmall.innerText = e.target.value; 
+// });
 
-});
+// litleText.addEventListener("input", function (e) {
+//   previewSmall.innerText = e.target.value;
+// });
 
 // document.body.addEventListener("keyup", function(e) {
-//     console.log(e)
+//     if( e.key === "Enter" ) {
+//       console.log("Ahoj")
+//     }
+
+//     let catchUl  = document.querySelector("ul")
+//     let fragment = document.createDocumentFragment();
+//     let li = fragment.appendChild(document.createElement("li"));
+//     li.textContent = e.target.value;
 // })
-
-
