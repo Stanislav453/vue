@@ -3,9 +3,8 @@ let bigText = document.querySelector("#big-text"),
   preview = document.querySelector(".preview"),
   previewSmall = document.querySelector(".preview2"),
   appBoddy = document.querySelector("#app"),
-  divMiror = document.querySelector(".mirror");
+  mirror   = document.querySelector( ".mirror" );
 
-  console.log( divMiror )
 
 // appBoddy.addEventListener("keydown", function (e) {
 //   console.log(e);
@@ -14,16 +13,13 @@ let bigText = document.querySelector("#big-text"),
 //   }
 // });
 
-bigText.addEventListener("input", function (bigText) {
-
-  let myBigTextValue = bigText.target.value;
-
-  preview.textContent = myBigTextValue;
+bigText.addEventListener("input", function (e) {
+  preview.textContent = e.target.value;
 
 });
 
 litleText.addEventListener("input", function (e) {
-  previewSmall.innerText = e.target.value;
+  previewSmall.textContent = e.target.value;
 });
 
 // document.body.addEventListener("keyup", function(e) {
@@ -31,9 +27,16 @@ litleText.addEventListener("input", function (e) {
       
 //     let catchUl  = document.querySelector("ul")
 //     let fragment = document.createDocumentFragment();
-//     let li = fragment.appendChild(document.createElement("li"));
-//     li.textContent = myBigTextValue;
+//     let li = fragment.appendChild(document.createElement("span"));
+//     li.textContent = e.target.value;
 
 //     catchUl.appendChild(fragment)
 //     }
 // })
+
+
+
+// divMiror.addEventListener("keyup", function(e) {
+//   console.log( e.target.value )
+// })
+
