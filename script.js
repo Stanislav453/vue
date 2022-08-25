@@ -22,21 +22,28 @@ litleText.addEventListener("input", function (e) {
   previewSmall.textContent = e.target.value;
 });
 
-// document.body.addEventListener("keyup", function(e) {
-//     if( e.key === "Enter" ) {
+console.log( preview.innerText )
+
+document.body.addEventListener("keyup", function(e) {
+    if( e.key === "Enter" ) {
+
+    
       
-//     let catchUl  = document.querySelector("ul")
-//     let fragment = document.createDocumentFragment();
-//     let li = fragment.appendChild(document.createElement("span"));
-//     li.textContent = e.target.value;
+    let catchUl  = document.querySelector("ul")
+    let fragment = document.createDocumentFragment();
+    let article= fragment
+            .appendChild(document.createElement("li"))
+            .appendChild(document.createElement("article"))
+      article.classList.add("dude")
+    article.textContent = preview.textContent;
 
-//     catchUl.appendChild(fragment)
-//     }
-// })
+    let spanText = document.createElement("span")
+    spanText.textContent = previewSmall.textContent
+
+    article.appendChild(spanText)
+    catchUl.appendChild(fragment)
 
 
-
-// divMiror.addEventListener("keyup", function(e) {
-//   console.log( e.target.value )
-// })
+    }
+})
 
