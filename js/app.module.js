@@ -9,31 +9,48 @@ var app = (function () {
   var addVoice = function () {
      let voiceNumber =  document.createElement("input")
          voiceNumber.setAttribute("type", "number")
-         voiceNumber.classList.add("ctrl")
-         voiceNumber.value = 0
-
-        //  if( voiceNumber >= 15 ) {
-
-        //  }
+         voiceNumber.setAttribute("value", "0")
+         voiceNumber.classList.add("ctrl");
 
          return {
             voiceNumber: voiceNumber
          }
+
   }
 
-  //Vytvorenie li
-  var addLi = function () {
-    var appLi =  document.createElement("li")
-        catchUl.appendChild(appLi)
+  
+  //Vytvorenie remove (input/number)
+  var addRemove = function () {
+    let linkRemove =  document.createElement("a")
+        linkRemove.classList.add("ctrl");
+        linkRemove.textContent = "X";
 
-        appLi.appendChild(addVoice().voiceNumber)
-      
-      
+        linkRemove.addEventListener("click", function() {
+          addLi().appLi.remove()
+          console.log( "ahoj" )
+        })
+
         return {
-        appLi: appLi
-
+           linkRemove: linkRemove
         }
-  };
+
+ }
+
+     //Vytvorenie li
+     var addLi = function () {
+      var appLi =  document.createElement("li")
+          catchUl.appendChild(appLi)
+  
+          appLi.appendChild(addRemove().linkRemove)
+          appLi.appendChild(addVoice().voiceNumber)
+        
+        
+          return {
+          appLi: appLi
+  
+          }
+    };
+
 
 
   // Block textu
@@ -44,21 +61,28 @@ var app = (function () {
         .appendChild(document.createElement("article"));
         article.classList.add("dude");
         article.textContent = preview.textContent;
-
-      addLi().appLi.appendChild(article)
       
+
+        addLi().appLi.appendChild(article)
   
       let spanText = document.createElement("span");
       spanText.textContent = previewSmall.textContent;
 
       article.appendChild(spanText);
 
+      return {
+        article: article
+      }
+
+
   };
+
+
 
   // Vracanie funkcii
   return {
 
-    addBlock: addBlock
+    addBlock: addBlock,
 
   }
     
