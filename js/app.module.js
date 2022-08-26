@@ -15,7 +15,6 @@ var addLi = function () {
     
 
 //Vytvorenie počítadla (input/number)
-
 var addVoice = function () {
      let voiceNumber =  document.createElement("input")
          voiceNumber.setAttribute("type", "number")
@@ -30,8 +29,6 @@ var addVoice = function () {
 // Block textu
 function addBlock () {
 
-    addLi();
-
     let fragment = document.createDocumentFragment();
     let article = fragment
       .appendChild(document.createElement("article"));
@@ -39,14 +36,14 @@ function addBlock () {
     article.textContent = preview.textContent;
 
     addLi().appLi.appendChild(article)
+    // addLi().appLi.appendChild(addVoice())
       
   
     let spanText = document.createElement("span");
     spanText.textContent = previewSmall.textContent;
 
-  
     article.appendChild(spanText);
-    catchUl.appendChild(fragment);
+
   };
 
   return {
