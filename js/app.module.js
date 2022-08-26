@@ -19,29 +19,29 @@ var app = (function () {
   }
 
   
-  //Vytvorenie remove (input/number)
-  var addRemove = function () {
-    let linkRemove =  document.createElement("a")
-        linkRemove.classList.add("ctrl");
-        linkRemove.textContent = "X";
+  // //Vytvorenie remove (input/number)
+  // var addRemove = function () {
+  //   let linkRemove =  document.createElement("a")
+  //       linkRemove.classList.add("ctrl");
+  //       linkRemove.textContent = "X";
 
-        linkRemove.addEventListener("click", function() {
-          addLi().appLi.remove()
-          console.log( "ahoj" )
-        })
+  //       linkRemove.addEventListener("click", function() {
+  //         addLi().appLi.remove()
+  //         console.log( "ahoj" )
+  //       })
 
-        return {
-           linkRemove: linkRemove
-        }
+  //       return {
+  //          linkRemove: linkRemove
+  //       }
 
- }
+//  }
 
      //Vytvorenie li
      var addLi = function () {
       var appLi =  document.createElement("li")
           catchUl.appendChild(appLi)
   
-          appLi.appendChild(addRemove().linkRemove)
+          // appLi.appendChild(addRemove().linkRemove)
           appLi.appendChild(addVoice().voiceNumber)
         
         
