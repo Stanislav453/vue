@@ -17,7 +17,7 @@ document.body.addEventListener("keyup", function (e) {
 
   if (e.key === "Enter") {
 
-    app.addBlock();
+    app.addLi();
 
   }
 });
