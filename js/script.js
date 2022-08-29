@@ -19,5 +19,13 @@ document.body.addEventListener("keyup", function (e) {
 
     app.addLi();
 
+    bigText.value   =   "";
+    litleText.value = "";
+
+    previewSmall.textContent = "";
+    preview.textContent = "";
+
+  
+
   }
 });
