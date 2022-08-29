@@ -4,6 +4,7 @@ var app = (function () {
   var catchUl = document.querySelector("ul");
 
 
+  // Create article
   var createBlock = function() {
 
     let fragment = document.createDocumentFragment();
@@ -17,8 +18,6 @@ var app = (function () {
     spanText.textContent = previewSmall.textContent;
 
     article.appendChild(spanText);
-
-
 
     return {
       article: article
@@ -36,7 +35,8 @@ var app = (function () {
          voiceNumber.classList.add("ctrl");
 
          voiceNumber.addEventListener("input", function(e) {
-          createBlock().article.classList.toggle("gold", e.target.value > 2)
+         createBlock().article.classList.toggle("gold", +e.target.value > 2)
+        
         })
 
          return {
@@ -45,17 +45,35 @@ var app = (function () {
 
   }
 
-
      //Vytvorenie li
      var addLi = function () {
       var appLi =  document.createElement("li")
-          catchUl.appendChild(appLi)
+          catchUl.appendChild(appLi);
 
+          let linkRemove =  document.createElement("a")
+          linkRemove.classList.add("ctrl");
+          linkRemove.textContent = "X";
+  
+
+          appLi.appendChild(linkRemove)
           appLi.appendChild(createBlock().article)
           appLi.appendChild(addVoice().voiceNumber)
-  
-        
-      
+
+          
+
+          linkRemove.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            this.nextElementSibling.nextSibling.remove();
+            this.nextElementSibling.remove();
+            this.remove();
+        });
+
+
+          return {
+            appLi: appLi
+          }
+
     };
 
 
@@ -73,20 +91,3 @@ var app = (function () {
 
 
 
-  
-//   //Vytvorenie remove (input/number)
-//   var addRemove = function () {
-//     let linkRemove =  document.createElement("a")
-//         linkRemove.classList.add("ctrl");
-//         linkRemove.textContent = "X";
-
-//         linkRemove.addEventListener("click", function() {
-//           addLi().appLi.remove()
-//           console.log( "ahoj" )
-//         })
-
-//         return {
-//            linkRemove: linkRemove
-//         }
-
-//  }
